@@ -38,8 +38,7 @@ router.post('/login',(req,res,next)=>
 {  
    User.find({username: req.body.username}).exec()   //pass object as parametr instead of a variable
    .then(user => {
-     console.log(user[0].password)
-     console.log("lawda ka user")
+     console.log(user[0].password);
      if(user[0].password === req.body.password)
      {
        res.status(200).json("True")
